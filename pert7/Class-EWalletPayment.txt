@@ -1,17 +1,48 @@
+package pert7;
+
 public class EWalletPayment implements PaymentMethod {
+    private String namaLayanan;   
+    private double nominalBayar;  
+    private double saldo;         
+    private final double TRANSACTION_FEE = 2000.0; 
 
-    // TODO: Buat atribut yang diperlukan, misalnya:
-    // - nama penyedia layanan (contoh: Dana, OVO, Gopay)
-    // - jumlah saldo
-    // - nominal transaksi
+    public EWalletPayment(String namaLayanan, double saldoAwal, double nominalBayar) {
+        this.namaLayanan = namaLayanan;
+        this.saldo = saldoAwal;
+        this.nominalBayar = nominalBayar;
+    }
 
-    // TODO: Buat constructor untuk mengisi nilai atribut
+    @Override
+    public String processPayment() {
+        double total = nominalBayar + getTransactionFee();
+        if (saldo >= total) {
+            saldo -= total;
+            return "Pembayaran berhasil!";
+        } else {
+            return "Pembayaran gagal! Saldo tidak cukup.";
+        }
+    }
 
-    // TODO: Implementasikan semua method yang ada pada interface PaymentMethod
+    @Override
+    public String getPaymentDetails() {
+        return "Pembayaran dilakukan melalui " + namaLayanan;
+    }
 
-    // Catatan:
-    // - Pada method processPayment(), lakukan pengecekan kecukupan saldo
-    // - Jika saldo cukup, kurangi saldo lalu tampilkan pesan berhasil
-    // - Jika saldo tidak cukup, tampilkan pesan gagal
+    @Override
+    public double getTransactionFee() {
+        return TRANSACTION_FEE;
+    }
 
+    @Override
+    public double getBalance() {
+        return saldo;
+    }
+
+    public double getNominalBayar() {
+        return nominalBayar;
+    }
+
+    public String getNamaLayanan() {
+        return namaLayanan;
+    }
 }

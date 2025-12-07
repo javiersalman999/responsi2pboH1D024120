@@ -7,3 +7,15 @@ Apa yang terjadi jika kita mencoba mengubah nilai suatu konstanta setelah objek 
 Bagaimana cara mendefinisikan konstanta dalam bahasa Java?
 
 Jawaban
+
+Function adalah method yang mengembalikan nilai, ada return, dan tipe kembaliannya bisa apa saja. 
+Sedangkan Procedure adalah method yang tidak mengembalikan nilai, hanya melakukan aksi, dan bertipe void. 
+
+Konstanta digunakan untuk nilai yang tidak boleh berubah
+keuntungannya yaitu mencegah perubahan nilai yang tidak sengaja, membuat program lebih aman dan stabil, dan memudahkan dokumentasi.
+
+Program akan menghasilkan error compile-time.
+contoh dari program diatas : jika merubah variable p.faktorAktivitas = 1.5; 
+maka program memunculkan error cannot assign a value to final variable faktorAktivitas karena nilai konstanta nya sudah final 1.2
+
+Dengan menggunakan kata kunci final

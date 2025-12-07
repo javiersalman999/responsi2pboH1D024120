@@ -1,16 +1,21 @@
+package pert7;
+
 public class PaymentTest {
-
     public static void main(String[] args) {
+        System.out.println("=== PROGRAM SISTEM PEMBAYARAN (E-WALLET) ===");
 
-        // TODO:
-        // - Buat objek dari EWalletPayment
-        // - Panggil method yang telah dibuat untuk menguji fungsionalitas
-        // - Tampilkan hasil akhir informasi saldo dan detail pembayaran
-        //
-        // Contoh alur (boleh diikuti atau dimodifikasi oleh praktikan):
-        // 1. Menampilkan data sebelum transaksi
-        // 2. Memproses pembayaran
-        // 3. Menampilkan data setelah transaksi
+        double saldoAwal = 150000;
+        double nominal = 50000;
 
+        EWalletPayment transaksi = new EWalletPayment("OVO", saldoAwal, nominal);
+
+        System.out.println("Saldo awal: " + (long)transaksi.getBalance());
+
+        System.out.println("Memproses pembayaran sebesar " + (long)transaksi.getNominalBayar() + "...");
+        String hasil = transaksi.processPayment();
+        System.out.println(hasil);
+
+        System.out.println("Sisa saldo: " + (long)transaksi.getBalance());
+        System.out.println("Detail Transaksi: " + transaksi.getPaymentDetails());
     }
 }

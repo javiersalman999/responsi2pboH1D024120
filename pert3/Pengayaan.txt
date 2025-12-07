@@ -8,3 +8,17 @@ Setelah menyelesaikan kode, jawab pertanyaan berikut:
 5. Mengapa kita perlu menggunakan Inheritance? Apa keuntungan utamanya dibandingkan membuat dua class yang terpisah sama sekali (misal class Karyawan dan class Manajer dibuat terpisah tanpa hubungan)?
 
 Jawaban:
+
+1. extends digunakan untuk menyatakan bahwa sebuah kelas merupakan subclass dari kelas lain. Dengan extends, subclass mewarisi atribut dan method dari superclass sehingga bisa memakai atau mengoverride perilaku tersebut.
+
+2. Overloading adalah beberapa method yang punya nama sama dalam satu kelas tetapi berbeda parameter (jumlah/tipe). dantetap di kelas yang sama (compile-time polymorphism). 
+Sedangkan Overriding adalah subclass menulis ulang method yang sudah ada di superclass sama persis nama dan signature nya.Biasanya bertujuan untuk mengganti perilaku parent saat dipanggil lewat objek subclass (runtime polymorphism).
+
+3. super(...) memanggil constructor superclass untuk menginisialisasi bagian yang dimiliki parent. Tujuannya memastikan atribut yang didefinisikan di parent terinisialisasi dengan benar sebelum subclass menambah atribut sendiri.
+
+4. Jika variabel private, subclass tidak bisa langsung mengakses variabel tersebut (pasti error compile saat coba akses nama/gajiPokok). Solusinya:
+Tetap private tapi sediakan protected/public getter (misal getNama()), atau
+Ubah access modifier menjadi protected agar subclass bisa mengakses secara langsung. Untuk enkapsulasi lebih baik tetap private + getter/setter.
+
+5. Inheritance memungkinkan reuse kode (menghindari duplikasi), hierarki yang jelas (IS-A), dan polimorfisme (bisa menggunakan referensi superclass untuk objek subclass). 
+Keuntungannya: lebih terstruktur, mudah pemeliharaan, dan lebih mudah menambahkan variasi perilaku melalui overriding.

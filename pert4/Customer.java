@@ -1,9 +1,19 @@
-class Customer {
-    // TODO: Buatkan atribut
+package pert4;
 
-    // TODO: Sediakan constructor
+public class Customer {
+    String nama;
+    String id;
+    int totalBelanja;
+
+    Customer(String nama, String id, int totalBelanja) {
+        this.nama = nama;
+        this.id = id;
+        this.totalBelanja = totalBelanja;
+    }
 
     void tampilkanInfo() {
-        // TODO: tampilkan data customer
+        System.out.println("Nama: " + nama + " | ID: " + id + 
+                           " | Total Belanja: Rp " + totalBelanja);
     }
 }
+

@@ -6,3 +6,18 @@ Setelah menyelesaikan kode, jawab pertanyaan berikut:
 3. Apa tujuan penggunaan keyword "implements" pada sebuah class?
 4. Apakah sebuah class dapat mengimplementasikan lebih dari satu interface? Jelaskan dan berikan contoh sederhana.
 5. Jika sebuah class mengimplementasikan interface, apa yang terjadi jika class tersebut tidak mengimplementasikan semua method dari interface tersebut?
+
+Jawaban:
+
+1. Interface hanya mendeklarasikan kontrak method. Sedangkan class biasa bisa memiliki state (atribut), implementasi method, konstruktor, dan bisa diinstansiasi (kecuali jika abstract).
+Fungsi interface adalah untuk mendefinisikan perilaku yang harus dipenuhi oleh berbagai kelas yang tidak memiliki hubungan pewarisan langsung. 
+
+2. Karena interface dimaksudkan sebagai kontrak yaitu memberi tahu “method apa” yang harus ada, tanpa memaksa bagaimana implementasinya.
+
+3. implements memberitahu compiler bahwa sebuah class setuju untuk memenuhi kontrak interface dengan mengimplementasikan semua method yang didaftarkan di interface tersebut. 
+Jika class tidak mengimplementasikan semua method, class harus dideklarasikan abstract
+
+4. Ya, Java mendukung multiple interface.
+
+5. Jika class yang mengimplementasikan interface tidak mengimplementasikan semua method, maka class tersebut harus dideklarasikan abstract. 
+Jika tidak abstract, compiler akan menolak (compile error).
